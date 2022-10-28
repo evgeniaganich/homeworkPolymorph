@@ -1,0 +1,47 @@
+public abstract class Driver<T extends Car> {
+    private String name;
+    private boolean hasDriverLicense;
+    private int experience;
+
+    public Driver(String name, boolean hasDriverLicense, int experience) {
+        this.name = ValidationUtils.validOrDefault(name, "default");
+        this.hasDriverLicense = hasDriverLicense;
+        this.experience = ValidationUtils.validOrDefault(experience, 2);
+    }
+    public Driver(String name) {
+        this.name = ValidationUtils.validOrDefault(name, "default");
+    }
+    public abstract void driveCar(T car);
+
+    public abstract void startMoving();
+
+    public abstract void stopMoving();
+
+    public abstract void refillCar();
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = ValidationUtils.validOrDefault(name, "default");
+    }
+
+    public boolean isHasDriverLicense() {
+        return hasDriverLicense;
+    }
+
+    public void setHasDriverLicense(boolean hasDriverLicense) {
+        this.hasDriverLicense = hasDriverLicense;
+    }
+
+    public int getExperience() {
+        return experience;
+    }
+
+    public void setExperience(int experience) {
+        this.experience = ValidationUtils.validOrDefault(experience, 2);
+    }
+
+
+}
