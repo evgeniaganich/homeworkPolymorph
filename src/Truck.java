@@ -1,6 +1,27 @@
 public class Truck extends Car implements Competing{
-    public Truck(String brand, String model, double engineVolume) {
+
+    private LoadCapacity loadCapacity;
+    public Truck(String brand, String model, double engineVolume, LoadCapacity loadCapacity) {
         super(brand, model, engineVolume);
+        this.loadCapacity = loadCapacity;
+    }
+
+    @Override
+    public void printCarType() {
+        if (loadCapacity == null) {
+            System.out.println("Данных по авто недостаточно");
+        } else {
+            String to = loadCapacity.getTo() == null ? "" : " тонн до " + loadCapacity.getTo() + " тонн";
+            System.out.println("Грузоподъемность: от " + loadCapacity.getFrom() + to);
+        }
+    }
+
+    public LoadCapacity getLoadCapacity() {
+        return loadCapacity;
+    }
+
+    public void setLoadCapacity(LoadCapacity loadCapacity) {
+        this.loadCapacity = loadCapacity;
     }
 
     @Override

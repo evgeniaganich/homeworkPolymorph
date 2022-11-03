@@ -28,4 +28,6 @@ public abstract class Car {
     public String toString() {
         return brand + " " + model + ", объем двигателя: " + engineVolume;
     }
+
+    public abstract void printCarType();
 }

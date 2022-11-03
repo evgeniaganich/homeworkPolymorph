@@ -1,6 +1,26 @@
 public class PassengerCar extends Car implements Competing{
-    public PassengerCar(String brand, String model, double engineVolume) {
+
+    private TypeOfBody typeOfBody;
+    public PassengerCar(String brand, String model, double engineVolume, TypeOfBody typeOfBody) {
         super(brand, model, engineVolume);
+        this.typeOfBody = typeOfBody;
+    }
+
+    @Override
+    public void printCarType() {
+        if (typeOfBody == null) {
+            System.out.println("Данных по авто недостаточно");
+        } else {
+            System.out.println("Тип кузова: " + typeOfBody);
+        }
+    }
+
+    public TypeOfBody getTypeOfBody() {
+        return typeOfBody;
+    }
+
+    public void setTypeOfBody(TypeOfBody typeOfBody) {
+        this.typeOfBody = typeOfBody;
     }
 
     @Override
@@ -32,7 +52,7 @@ public class PassengerCar extends Car implements Competing{
 
     @Override
     public void maxSpeed() {
-        System.out.println("Легковая ашина развивает максимальную скорость");
+        System.out.println("Легковая машина развивает максимальную скорость");
 
     }
 }

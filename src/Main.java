@@ -1,23 +1,26 @@
 public class Main {
     public static void main(String[] args) {
-        Bus liaz = new Bus("ЛиАЗ", "697", 3.0);
-        Bus ikarus = new Bus("Ikarus", "280", 2.5);
-        Bus volkswagen = new Bus("Volkswagen", "Microbus", 2.8);
-        Bus krupp = new Bus("Krupp", "Titan", 1.9);
+        Bus liaz = new Bus("ЛиАЗ", "697", 3.0, Capacity.LARGE);
+        Bus ikarus = new Bus("Ikarus", "280", 2.5, Capacity.MEDIUM);
+        Bus volkswagen = new Bus("Volkswagen", "Microbus", 2.8, Capacity.SMALL);
+        Bus krupp = new Bus("Krupp", "Titan", 1.9, Capacity.EXTRA_SMALL);
 
-        PassengerCar lada = new PassengerCar("Lada", "Granta", 1.7);
-        PassengerCar audi = new PassengerCar("Audi","A8 50 L TDI quattro", 3.0);
-        PassengerCar hyundai = new PassengerCar("Hyundai", "Avante", 1.6);
-        PassengerCar kia = new PassengerCar("Kia", "Sportage 4-го поколения", 2.4);
+        PassengerCar lada = new PassengerCar("Lada", "Granta", 1.7, TypeOfBody.SEDAN);
+        PassengerCar audi = new PassengerCar("Audi","A8 50 L TDI quattro", 3.0, TypeOfBody.HATCHBACK);
+        PassengerCar hyundai = new PassengerCar("Hyundai", "Avante", 1.6, TypeOfBody.SEDAN);
+        PassengerCar kia = new PassengerCar("Kia", "Sportage 4-го поколения", 2.4, TypeOfBody.COUPE);
 
-        Truck kamaz = new Truck("КамАЗ", "4326", 3.3);
-        Truck mercedes = new Truck("Mercedes-Benz", "Actros", 2.9);
-        Truck gaz = new Truck("ГАЗ", "3934 СИАМ", 3.0);
-        Truck ural = new Truck("Урал", "375", 3.2);
+        Truck kamaz = new Truck("КамАЗ", "4326", 3.3, LoadCapacity.N1);
+        Truck mercedes = new Truck("Mercedes-Benz", "Actros", 2.9, LoadCapacity.N2);
+        Truck gaz = new Truck("ГАЗ", "3934 СИАМ", 3.0, LoadCapacity.N3);
+        Truck ural = new Truck("Урал", "375", 3.2, LoadCapacity.N1);
 
         System.out.println(liaz);
+        liaz.printCarType();
         System.out.println(lada);
+        lada.printCarType();
         System.out.println(kamaz);
+        kamaz.printCarType();
         audi.startMoving();
 
         audi.pitStop();
