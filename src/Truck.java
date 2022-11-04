@@ -56,4 +56,9 @@ public class Truck extends Car implements Competing{
         System.out.println("Грузовик развивает максимальную скорость");
 
     }
+
+    @Override
+    public boolean service() {
+        return Math.random() > 0.7;
+    }
 }

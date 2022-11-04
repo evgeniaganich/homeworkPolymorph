@@ -48,4 +48,10 @@ public class Bus extends Car implements Competing {
         System.out.println("Автобус развивает максимальную скорость");
 
     }
+
+    @Override
+    public boolean service() {
+        System.out.println("Автобусу " + getModel() + " " + getBrand() + " диагностика не требуется");
+        return true;
+    }
 }

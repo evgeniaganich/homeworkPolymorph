@@ -4,6 +4,7 @@ public class DriverCategoryB extends Driver<PassengerCar> {
         super(name);
     }
 
+
     @Override
     public void driveCar(PassengerCar car) {
         System.out.println("Водитель " + getName() + " водит машину " + car.getBrand() + " " + car.getModel() + " и будет участвовать в заезде");

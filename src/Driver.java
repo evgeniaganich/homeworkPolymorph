@@ -3,14 +3,26 @@ public abstract class Driver<T extends Car> {
     private boolean hasDriverLicense;
     private int experience;
 
+    private T driverCategory;
+
     public Driver(String name, boolean hasDriverLicense, int experience) {
         this.name = ValidationUtils.validOrDefault(name, "default");
         this.hasDriverLicense = hasDriverLicense;
         this.experience = ValidationUtils.validOrDefault(experience, 2);
     }
+
     public Driver(String name) {
         this.name = ValidationUtils.validOrDefault(name, "default");
     }
+
+    public Driver(String name, boolean hasDriverLicense, int experience, T driverCategory) {
+        this.name = ValidationUtils.validOrDefault(name, "default");
+        this.hasDriverLicense = hasDriverLicense;
+        this.experience = ValidationUtils.validOrDefault(experience, 2);
+        setDriverCategory(driverCategory);
+
+    }
+
     public abstract void driveCar(T car);
 
     public abstract void startMoving();
@@ -43,5 +55,14 @@ public abstract class Driver<T extends Car> {
         this.experience = ValidationUtils.validOrDefault(experience, 2);
     }
 
+    public T getDriverCategory() {
+        return driverCategory;
+    }
 
+    public void setDriverCategory(T driverCategory) {
+        if (getDriverCategory() == null) {
+            throw new IllegalArgumentException("Необходимо указать категорию прав!");
+        }
+        this.driverCategory = driverCategory;
+    }
 }

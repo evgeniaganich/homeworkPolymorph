@@ -30,4 +30,6 @@ public abstract class Car {
     }
 
     public abstract void printCarType();
+
+    public abstract boolean service();
 }

@@ -6,6 +6,7 @@ public class PassengerCar extends Car implements Competing{
         this.typeOfBody = typeOfBody;
     }
 
+
     @Override
     public void printCarType() {
         if (typeOfBody == null) {
@@ -54,5 +55,10 @@ public class PassengerCar extends Car implements Competing{
     public void maxSpeed() {
         System.out.println("Легковая машина развивает максимальную скорость");
 
+    }
+
+    @Override
+    public boolean service() {
+        return Math.random() > 0.5;
     }
 }
