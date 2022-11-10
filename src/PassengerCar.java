@@ -1,11 +1,17 @@
 public class PassengerCar extends Car implements Competing{
 
     private TypeOfBody typeOfBody;
+
+    private Sponsor sponsor;
     public PassengerCar(String brand, String model, double engineVolume, TypeOfBody typeOfBody) {
         super(brand, model, engineVolume);
         this.typeOfBody = typeOfBody;
     }
-
+    public PassengerCar(String brand, String model, double engineVolume, TypeOfBody typeOfBody, Sponsor sponsor) {
+        super(brand, model, engineVolume);
+        this.typeOfBody = typeOfBody;
+        this.sponsor = sponsor;
+    }
 
     @Override
     public void printCarType() {
@@ -60,5 +66,13 @@ public class PassengerCar extends Car implements Competing{
     @Override
     public boolean service() {
         return Math.random() > 0.5;
+    }
+
+    public Sponsor getSponsor() {
+        return sponsor;
+    }
+
+    public void setSponsor(Sponsor sponsor) {
+        this.sponsor = sponsor;
     }
 }

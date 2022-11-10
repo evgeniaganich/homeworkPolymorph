@@ -1,9 +1,16 @@
 public class Truck extends Car implements Competing{
 
     private LoadCapacity loadCapacity;
+    private Sponsor sponsor;
     public Truck(String brand, String model, double engineVolume, LoadCapacity loadCapacity) {
         super(brand, model, engineVolume);
         this.loadCapacity = loadCapacity;
+    }
+
+    public Truck(String brand, String model, double engineVolume, LoadCapacity loadCapacity, Sponsor sponsor) {
+        super(brand, model, engineVolume);
+        this.loadCapacity = loadCapacity;
+        this.sponsor = sponsor;
     }
 
     @Override

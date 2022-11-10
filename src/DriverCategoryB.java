@@ -24,4 +24,9 @@ public class DriverCategoryB extends Driver<PassengerCar> {
     public void refillCar() {
         System.out.println("Заправляю легковую машину");
     }
+
+    @Override
+    public String toString() {
+        return getName();
+    }
 }

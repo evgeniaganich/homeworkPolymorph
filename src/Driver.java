@@ -65,4 +65,9 @@ public abstract class Driver<T extends Car> {
         }
         this.driverCategory = driverCategory;
     }
+
+    @Override
+    public String toString() {
+        return name;
+    }
 }

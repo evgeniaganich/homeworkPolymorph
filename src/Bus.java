@@ -1,9 +1,15 @@
 public class Bus extends Car implements Competing {
 
     private Capacity capacity;
+    private Sponsor sponsor;
     public Bus(String brand, String model, double engineVolume, Capacity capacity) {
         super(brand, model, engineVolume);
         this.capacity = capacity;
+    }
+    public Bus(String brand, String model, double engineVolume, Capacity capacity, Sponsor sponsor) {
+        super(brand, model, engineVolume);
+        this.capacity = capacity;
+        this.sponsor = sponsor;
     }
 
     @Override
@@ -53,5 +59,13 @@ public class Bus extends Car implements Competing {
     public boolean service() {
         System.out.println("Автобусу " + getModel() + " " + getBrand() + " диагностика не требуется");
         return true;
+    }
+
+    public Sponsor getSponsor() {
+        return sponsor;
+    }
+
+    public void setSponsor(Sponsor sponsor) {
+        this.sponsor = sponsor;
     }
 }
