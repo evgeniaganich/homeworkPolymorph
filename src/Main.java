@@ -1,6 +1,4 @@
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
+import java.util.*;
 
 public class Main {
     public static void main(String[] args) {
@@ -17,6 +15,7 @@ public class Main {
         Mechanic<PassengerCar> petr = new Mechanic<>("Петр", "Петров","ООО Ромашка");
         Mechanic<Truck> sergey = new Mechanic<>("Сергей", "Иванов", "ООО Мотор");
         Mechanic<Bus> svetlana = new Mechanic<>("Светлана", "Иванова", "Girl Power LLC");
+        Mechanic<Bus> sveta1 = new Mechanic<>("Светлана", "Иванова", "Girl Power LLC");
 
         Bus liaz = new Bus("ЛиАЗ", "697", 3.0, Capacity.LARGE);
         liaz.addDriver(maxim);
@@ -81,6 +80,29 @@ public class Main {
         List<Car> cars = List.of(kia, lada, hyundai, audi,
                 kamaz, krupp, mercedes, ural,
                 gaz, liaz, ikarus, volkswagen);
+
+        Set<Car> allCars = new HashSet<>(cars);
+        Set<Sponsor> sponsors = new HashSet<>();
+        sponsors.add(ivan);
+        sponsors.add(rich);
+        sponsors.add(james);
+        sponsors.add(gold);
+
+        Set<Mechanic> mechanics = new HashSet<>();
+        mechanics.add(petr);
+        mechanics.add(sergey);
+        mechanics.add(svetlana);
+        mechanics.add(sveta1);
+
+        Set<Driver> drivers = new HashSet<>();
+        drivers.add(maxim);
+        drivers.add(alexander);
+        drivers.add(haruki);
+
+        System.out.println(allCars);
+        System.out.println(sponsors);
+        System.out.println(mechanics);
+        System.out.println(drivers);
 
         printInfo(lada);
         printInfo(kamaz);

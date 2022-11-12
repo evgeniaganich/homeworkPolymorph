@@ -1,3 +1,5 @@
+import java.util.Objects;
+
 public class Sponsor <T extends Car>{
 
     private String name;
@@ -29,5 +31,18 @@ public class Sponsor <T extends Car>{
     @Override
     public String toString() {
         return name;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Sponsor<?> sponsor = (Sponsor<?>) o;
+        return sumOfSupport == sponsor.sumOfSupport && Objects.equals(name, sponsor.name);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(name, sumOfSupport);
     }
 }

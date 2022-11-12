@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.Objects;
 
 public class Mechanic<T extends Car> {
     private String name;
@@ -61,5 +62,18 @@ public class Mechanic<T extends Car> {
     @Override
     public String toString() {
         return name + " " + lastName + " из компании " + company;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Mechanic<?> mechanic = (Mechanic<?>) o;
+        return Objects.equals(name, mechanic.name) && Objects.equals(lastName, mechanic.lastName) && Objects.equals(company, mechanic.company) && Objects.equals(cars, mechanic.cars);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(name, lastName, company, cars);
     }
 }

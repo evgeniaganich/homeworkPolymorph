@@ -1,3 +1,5 @@
+import java.util.Objects;
+
 public abstract class Driver<T extends Car> {
     private String name;
     private boolean hasDriverLicense;
@@ -69,5 +71,18 @@ public abstract class Driver<T extends Car> {
     @Override
     public String toString() {
         return name;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Driver<?> driver = (Driver<?>) o;
+        return hasDriverLicense == driver.hasDriverLicense && experience == driver.experience && Objects.equals(name, driver.name) && Objects.equals(driverCategory, driver.driverCategory);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(name, hasDriverLicense, experience, driverCategory);
     }
 }
